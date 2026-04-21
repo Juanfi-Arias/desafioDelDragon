@@ -41,3 +41,32 @@ class Guerrero{
     return this._ataques.find(ataque => ataque._nombre === nombre);
 }
 }
+
+class Turno{
+    constructor(guerrero){
+        this._guerrero = guerrero;
+        this._esquivando = false;
+    }
+
+    //metodo para recargar ki
+    recarga(){
+        this._guerrero._ki += 100;
+    }
+
+    atacar(nombreAtaque, rival){
+        let ataque =  this._guerrero.obtenerAtaque(nombreAtaque);
+       
+        if(this._guerrero._ki >= ataque._costKi){
+            console.log(`${this._guerrero._nombre} ha realizado ${ataque._nombre}`);
+            this._guerrero._ki -= ataque._costKi //gasto de ki
+            rival._pts -= ataque._danio;//daño al enemigo
+        } else{
+            console.log(`${this._guerrero._nombre} no tiene suficiente ki para realizar ${ataque._nombre}`)
+        }
+    }
+
+    esquivar(){
+        this._esquivando = true; // variable bandera que avisa al juego cunado esta el guerrero esquivando
+        console.log(`${this._guerrero._nombre} esta esquivando`);
+    }
+}
