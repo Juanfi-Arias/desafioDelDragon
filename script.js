@@ -25,3 +25,19 @@ fetch('https://dragonball-api.com/api/characters/2')
 
     //el codigo fuera del .then se ejecuta al instante, lo que esta dentro se ejecuta medio segundo o un segundo despues cuando la informacion llega del servidor!!!!
     //memorizalo!!!!!!!
+
+    function elegirPersonaje(personaje){
+        jugador = personaje;
+        maquina = (jugador == goku) ? vegeta : goku;
+        document.getElementById("pantSeleccion").style.display = "none";
+        document.getElementById("pantBatalla").style.display = "block";
+        jugador.pts=100;
+        maquina.pts=100;
+        document.getElementById("imgJugador").src=jugador.image;
+        document.getElementById("nameJugador").textContent = jugador.name;
+        document.getElementById("kiJugador").textContent = `Ki: ${jugador.ki}`
+
+        document.getElementById("imgMaquina").src= maquina.image;
+        document.getElementById("nameMaquina").textContent = maquina.name;
+        document.getElementById("kiMaquina").textContent = `Ki: ${maquina.ki}`
+    }

@@ -16,23 +16,39 @@
                 <img src="" alt="" id="imgGoku">
                 <h3 id="nameGoku"></h3>
                 <p id="kiGoku"></p>
-                <button>Elegir</button>
+                <button onclick="elegirPersonaje(goku)">Elegir</button>
             </li>
 
             <li>
                 <img src="" alt="" id="imgVegeta">
-                <h3 id="nameVegeta">Vegeta</h3>
+                <h3 id="nameVegeta"></h3>
                 <p id="kiVegeta"></p>
-                <button>Elegir</button>
+                <button onclick="elegirPersonaje(vegeta)">Elegir</button>
             </li>
         </ul>
     </section>
 
-    <section id="pantBatalla">
+    <section id="pantBatalla" style="display: none;">
         <h2>Defiendete</h2>
+
+        <ul>
+            <li>
+                <img src="" alt="" id="imgJugador">
+                <h3 id="nameJugador"></h3>
+                <p id="kiJugador">100</p>
+                <p id="ptsJugador">100</p>
+            </li>
+
+            <li>
+                <img src="" alt="" id="imgMaquina">
+                <h3 id="nameMaquina"></h3>
+                <p id="kiMaquina">100</p>
+                <p id="ptsMaquina"></p>
+            </li>
+        </ul>
     </section>
 
-    <section id="pantResultado">
+    <section id="pantResultado" style="display: none;">
         <h2 class="resultado"></h2>
     </section>
      <script src="script.js"></script>
